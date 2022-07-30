@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nama">Nama Anda</label>
+    <input type="text" name="nama" id="ini">
+    <button onclick="myFunction(ini.value)">Simpan</button>   
+    <!-- di atas untuk memanggil function dan parameternya -->
+    <h1></h1>
+    <script>
+
+        function myFunction(nama){
+            return alert (`Hello ${nama}`);
+        }
+     
+    //  simpan.addEventListener('click', function myFunction(nama){
+    //         const myName = document.getElementById('ini');
+    //         if(myName==nama){
+    //            return alert ('hello', nama);
+    //         }
+    //     })
+    </script>
+</body>
+</html>
