@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        //object literal
+        // let mahasiswa = {
+        //     nama: 'Ridho',
+        //     jurusan: 'Teknik Informatika',
+        //     energi :10,
+        //     makan : function(porsi){
+        //         this.energi = this.energi + porsi;
+        //         console.log(`selamat makan ${this.nama}`)
+        //     }
+        // };
+
+        //function declaration
+
+        // function mahasiswa (nama, energi){
+        //     let mahasiswa = {}
+        //     mahasiswa.nama = nama;
+        //     mahasiswa.energi = energi;
+        //     mahasiswa.makan = function(porsi){
+        //         this.energi += porsi;
+        //         console.log(`Halo ${nama} Selamat Makan`)
+        //     }
+
+        //     mahasiswa.main = function(jam){
+        //         this.energi -= jam;
+        //         console.log(`hallo ${nama} Selamat Bermain`);
+        //     }
+        //     return mahasiswa;
+        // }
+
+        // let Ridho = mahasiswa('Ridho', 10);
+
+        //constructor declaration
+        function Mahasiswa (nama, energi){
+            this.nama = nama;
+            this.energi = energi;
+            this.makan = function(porsi){
+                this.energi += porsi;
+                console.log(`Halo ${nama} Selamat Makan`)
+            }
+
+            this.main = function(jam){
+                this.energi -= jam;
+                console.log(`hallo ${nama} Selamat Bermain`);
+            }
+        }
+
+        let Ridho = new Mahasiswa('Ridho', 10);
+    </script>
+</body>
+</html>
