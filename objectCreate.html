@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+
+        const MethodMahasiswa = {
+            makan: function(porsi){
+                this.energi += porsi;
+                console.log(`Hello ${this.nama} Selamat Makan`);
+            },
+
+            main: function(jam){
+                this.energi -= jam;
+                console.log(`Hello ${this.nama} Selamat Bermain`)
+            }
+        }
+        function Mahasiswa (nama, energi) {
+            let mahasiswa = Object.create(MethodMahasiswa);  //ini untu memanggil object di luar function artinya kita bisa memanggil beberapa object di dalam function 
+
+            mahasiswa.nama = nama;
+            mahasiswa.energi = energi;
+
+
+            return mahasiswa;
+        }
+
+        let Ridho = Mahasiswa('Ridho', 10);
+    </script>
+</body>
+</html>

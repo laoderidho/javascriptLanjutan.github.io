@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Latihan 1</h1>
+        <label for="masuk">Masukkan Nama :</label>
+        <input type="text"  id="nama">
+        <br><br>
+        <label for="Masukkan Energi">Masukkan Energi</label>
+        <input type="text" id="energi">
+        <br><br>
+        <label for="">Masukkan Porsi Makan</label>
+        <input type="number" id="makan">
+        <button onclick="Mahasiswa(nama.value, energi.value)">Masukkan</button>
+        
+    </div>
+
+    <script>
+        function Mahasiswa(nama, energi){
+            mahasiswa ={};
+            mahasiswa.nama = nama;
+            mahasiswa.energi = energi;
+            mahasiswa.makan = function(porsi) {
+                this.energi += porsi;
+               return  alert(`Hello ${nama} Selamat Makan  energi kamu ${energi}`);
+            }
+            mahasiswa.main = function (jam){
+                this.energi -= jam; 
+               return  alert(`Hello ${nama} selamat bermain energi kamu ${energi}`);
+            }
+            return alert(`Hello ${nama} energi kamu ${energi}`);
+        }
+    </script>
+</body>
+</html>
