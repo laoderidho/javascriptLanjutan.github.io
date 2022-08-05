@@ -15,8 +15,6 @@
         <label for="Masukkan Energi">Masukkan Energi</label>
         <input type="text" id="energi">
         <br><br>
-        <label for="">Masukkan Porsi Makan</label>
-        <input type="number" id="makan">
         <button onclick="Mahasiswa(nama.value, energi.value)">Masukkan</button>
         
     </div>
@@ -28,7 +26,7 @@
             mahasiswa.energi = energi;
             mahasiswa.makan = function(porsi) {
                 this.energi += porsi;
-               return  alert(`Hello ${nama} Selamat Makan  energi kamu ${energi}`);
+                return  alert(`Hello ${nama} Selamat Makan  energi kamu ${energi}`);
             }
             mahasiswa.main = function (jam){
                 this.energi -= jam; 

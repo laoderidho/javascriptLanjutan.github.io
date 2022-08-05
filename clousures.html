@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //step 1
+        // function init(){
+        //     let nama = 'Ridho'; 
+        //     function init1(){
+        //         console.log(nama);
+        //     }
+        //     init1();
+        // }
+        // init();
+
+        //step 2
+    //     function init(){
+    //         return function(nama){
+    //             console.log(nama);
+    //         }
+    //     }
+
+    //    let i = init();
+    //    i('Ridho');
+
+    /*
+    alasan menggunakan clousures
+    - untuk membuat factories function seperti step 2 di atas
+    - agar ada private method
+    */
+
+    function ucapan (waktu){
+       return function (nama){
+            console.log(`Halo ${nama} selamat ${waktu} semoga harimu damai`)
+        }
+    }
+
+    let selamatPagi =  ucapan('Siang'); //parameter yang di pakai adalah function pertama
+    let selamatSiang = ucapan('pagi');
+
+    selamatPagi('Ridho')//parameter yang akan di pakai adalah function ke dua pemanggilan functionnya tidak perlu hanya butuh pemanggilan variabel nya untuk mengisi parameter function ke dua 
+
+    // Immediately Invoked function
+
+    let a = (function(){
+        let counter = 0;
+       return function(){
+        return counter++;
+       }
+    })();
+    console.log(a());
+    console.log(a());
+    console.log(a());
+
+    </script>
+</body>
+</html>

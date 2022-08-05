@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //contoh arrow function
+        // const saya = ()=>{
+        //     return alert('Ridho');
+        // }
+        // saya();
+
+        //arrow function dengan parameter 
+        const saya = (nama)=>{return console.log(`Hello ${nama}`)};
+        saya('Ridho');
+
+        /* ini adalah implisit return 
+        jika sebuah arrow function memiliki 1 parameter maka paremeter tersebut lebih baik 
+        tidak di kasih kurung ()
+        
+        jika sebuah arrow function hanya bisa 1 return saja maka lebih baik return tidak di ketik 
+        dan tidak di kasih kurung kurawa {}
+        konsepnya seperti function di atas tetapi yang ini lebih ringkas*/
+        const saya1 = nama=>console.log(`Hello ${nama}`);
+        saya1('Reza');
+
+        let mahasiswa = ['Ridho', 'reza', 'Al fahreza']
+
+        let jumlah = mahasiswa.map(nama=> nama.length);
+
+        console.log(jumlah);
+
+        //jika ingin mengembalikan objek maka di gabung antar ({})
+        let mahasiswi = ['Salwa', 'jana', 'Tija', 'fatmawati']
+
+        let jumlah1 = mahasiswiz.map(nama=>({nama: nama, hitungMhs: nama.length }));
+
+        console.table(jumlah1)
+
+        
+
+    </script>
+</body>
+</html>

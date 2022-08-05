@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .kamu{
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="klik()">Klik</button>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+    <div class="saya">
+        <h1>saya</h1>
+    </div>
+
+    <script>
+
+
+       function klik (){
+            const ketik = document.querySelectorAll('.saya');
+            ketik.forEach(function(e){  //dalam forEach di panggil parameter e sebagai pengubahan object nama ketik
+                e.classList.toggle('kamu');
+       })
+    }
+
+   
+    
+    // function saya1(){
+    //     let saya = document.querySelectorAll('saya');
+    //     saya.forEach(function(e){
+    //         e.classList.toggle('kamu');
+    //     })
+    // }
+
+    </script>
+</body>
+</html>

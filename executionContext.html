@@ -4,29 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .red{
-            color: red;
-        }
-        .blue{
-            color: blue;
-        }
-    </style>
     <title>Document</title>
 </head>
 <body>
     <div>
-     
+
     </div>
+
     <script>
-        
-       for( i=0; i<=100; i++){
-        if(i%2==0){
-            document.writeln(`<p class="red">${i}</p>`)
-        }else{
-            document.writeln(`<p class="blue">${i}</p>`)
+        console.log(myFunction()); 
+        var nama = 'Ridho';
+        var umur = 33;
+        function myFunction (){
+            return `Hello ${nama} umur kamu adalah ${umur} tahun`;
         }
-       }
+        /*
+        dalam javascript pertama untuk di eksekusi adalah 
+        step 1
+        javascript akan melihat elemen pertama terlebih dahulu 
+        step 2 
+        dalam kode pertama di panggil sebuah function maka javascript melihat apakah ada function di dalam file javascript 
+        step 3 
+        javascript melihat jika ada function maka javascript akan melihat isi function tersebut
+        step 4
+        javascript melihat ada sebuah pemanggilan deklarasi nama dan umur maka javascript memeriksa terlebih dahulu apakah variabel tersebut di deklarasikan maka setelah itu di eksekusi 
+        */
+
+        function a (){
+            console.log('ini A');
+
+            function b(){
+                console.log('ini B');
+                
+                function c(){
+                    console.log('ini C');
+                }
+                c();
+            }
+            b();
+        }
+        a();
     </script>
 </body>
 </html>
