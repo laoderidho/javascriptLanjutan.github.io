@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 50px auto;
+            transition: .3s width,
+                        .3s height .3s,
+                        .3s margin-top .3s,
+                        1s background-color;
+        }
+        .size{
+            width: 250px;
+            height: 150px;
+            margin-top: 25px;
+        }
+        .caption{
+            background-color: black ;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+
+    <script >
+        //konsep this pada arrow function
+        /* arrow function sebenarnya tidak bisa memakai konsep this tetapi berbeda jika kita ingin memanggil 
+        */
+        // const Mahasiswa = function(){
+        //     this.nama = 'Ridho';
+        //     this.jurusan = 'Teknik Informatika';
+        //     this.umur = 12;
+        //     this.Hello = () => console.log(`Hello ${this.nama} jurusan ${this.jurusan}`);
+
+        //     setInterval(()=>{
+        //         console.log(this.umur++)
+        //     }, 500);
+        // }
+
+        // const Ridho = new Mahasiswa();
+
+        const box = document.querySelector('.box');
+
+        box.addEventListener('click', function(){
+            
+        });
+    </script>
+</body>
+</html>
