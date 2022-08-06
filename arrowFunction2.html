@@ -55,9 +55,19 @@
 
         const box = document.querySelector('.box');
 
-        box.addEventListener('click', function(){
-            
-        });
+        box.addEventListener('click',function (){
+            let satu = 'size';
+            let dua = 'caption';
+
+            if(box.classList.contains(satu)){
+                [satu, dua] = [dua, satu]
+            }
+            box.classList.toggle(satu);
+
+            setTimeout(()=>{
+                this.classList.toggle(dua);
+            }, 600)
+        })
     </script>
 </body>
 </html>
