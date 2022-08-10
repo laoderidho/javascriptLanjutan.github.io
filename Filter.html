@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Ini uji Coba</h1>
+    </div>
+
+    <script>
+        /*Filter 
+        Filter adalah sebuah array baru yang di buat dari array lama yang di saring sedemikian untuk 
+        mengambil array yang kita ingin cari 
+        contohnya jika kita ingin makan maka ada array menu seperti 
+        ['daging', 'jus', 'sayur', 'tahu', 'buah', 'steak'] karena saya vegetarian 
+        saya tidak menginginkan menu khusus veget maka filter menyaring array di atas dan membuat 
+        array baru yaitu ['jus', 'sayur','buah', 'tahu'] */
+
+        const angka = [-1, 3, 5, 7 ,1 , -2, -1, 9, 8, 4, 3, -3, -5, -9];
+
+        // const newAngka = [];
+        // //cari angka >3 
+
+        // for(let i=0; i<angka.length; i++){
+        //     if(angka[i]>3){
+        //         newAngka.push(angka[i]);
+        //     }
+        // }
+
+        // console.log(newAngka); //ini metode manual 
+
+        //metode filter 
+
+        const newAngka = angka.filter(e=> e>=3 /*Ini adalah kondisi jika array di atas memenuhi perintah tersebut maka array baru akan di buat memenuhi perintah tersebut  */);
+
+
+        console.log(newAngka);
+
+    </script>
+</body>
+</html>

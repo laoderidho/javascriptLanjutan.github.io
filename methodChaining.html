@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        const angka = [-1, 3, 5, 7 ,1 , -2, -1, 9, 8, 4, 3, -3, -5, -9];
+
+        const hasil = angka.filter(e=> e>=3).map(e=> e*2).reduce((acc, curr)=>acc+curr);
+
+        //jika ingin di gabungkan antara filter , map, dan reduce maka bisa dengan metode tersebut. bukan hanya untuk hanya 1 filter atau satu map bisa juga di ulang ulang tanpa error sesuai metode algoritma 
+
+        console.log(hasil);
+    </script>
+</body>
+</html>
