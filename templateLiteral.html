@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="ini"></h1>
+    </div>
+
+    <script>
+      //template literarls / template String
+    const nama = 'Ridho';
+    const Umur = 18;
+
+    console.log(`Hallo nama saya ${nama}, Umur saya ${Umur} Tahun`);
+
+    //embeded expression
+    console.log(`${4*3}`);
+    // console.log(`${alert('Hello')}`)
+    
+    const x = 11;
+    console.log(`${(x%2==0)? 'genap': 'ganjil'}`);
+
+    //html fragmen
+
+    const mhs ={
+        nama :'Ridho',
+        jurusan : 'Teknik Informatika',
+        umur : 18,
+        hobi : 'catur',
+        buah : 'anggur'
+    }
+
+    const el = `<div class ="mhs">
+        <h2>${mhs.nama}</h2>
+        <span>${mhs.umur}</span>
+        </div>`;
+
+        console.log(el);
+    </script>
+
+    
+</body>
+</html>

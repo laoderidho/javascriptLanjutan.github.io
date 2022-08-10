@@ -40,7 +40,7 @@
         //code di atas untuk menangkap semua elemen data duration dan mengubah dalam bentuk array
 
         //pilih hanya javascript lanjutan
-        let elemen = elements.filter(e=> e.textContent.includes('JAVASCRIPT LANJUTAN'))
+        let elemen = elements.filter(e=> e.innerHTML.includes('JAVASCRIPT LANJUTAN'))
         //textcontent.includes adalah untuk memlihat isi dari textContent apakah ada elemen tersebut
 
         //ambil durasi masing masing video
@@ -61,13 +61,14 @@
         //simpan di dom
         const pDurasi = document.querySelector('.total-durasi');
 
-        pDurasi.textContent = `${jam} jam ${menit} menit ${detik} detik`;
+        pDurasi.innerHTML = `${jam} jam ${menit} Menit ${detik} detik`;
+
 
         const pjmlhVideo = document.querySelector('.jumlah-video');
 
         const jmlhVideo = elements.filter(e=> e.textContent.includes('JAVASCRIPT LANJUTAN')).length;
 
-        pjmlhVideo.textContent = `${jmlhVideo} video`;
+        pjmlhVideo.innerHTML = `${jmlhVideo} video`;
         console.log(elemen)
 
         
