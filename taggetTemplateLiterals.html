@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hl{
+           font-style: italic;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="ini">
+
+    </div>
+
+    <script>
+        //tagget template
+        // const nama = 'Ridho';
+        // const jurusan = 'Teknik Informatika';
+
+        // function coba (strings, ...args //...args adalah rest parameter yang artinya parameternya terus bertambah tergantung berapa banyak yang di panggil){
+            
+        //     // strings.forEach((isi, i)=>{ 
+        //     //     str += `${isi} ${args[i] || ' '}`; 
+        //     // })
+        //     // return str;
+
+        //     //daripada yang susah ada hal yang lebih mudah yaitu 
+
+        //     return strings.reduce((result, str, i)=> `${result}${str}${args[i]  || ' '} `, ' ');
+        // }
+
+
+
+        // const str = coba`Hello ${nama}, kamu berada di jurusan ${jurusan}`;
+
+        // console.log(str)
+
+    //highlight 
+    const nama = 'Ridho';
+    const jurusan = 'Teknik Informatika';
+    const umur = 12
+
+    const nama1 = 'Reza';
+    const jurusan1 = 'Sistem Informasi';
+    const umur1 = 12
+
+
+    function coba (strings, /*ini memuat isi dari text*/ ...args /*ini memuat expresion*/){ 
+        return strings.reduce((result, str, i)=> `${result}${str} <span class ="hl">${args[i]  || ' '}</span> `, ' ');
+    }
+
+        const str = coba`Hello ${nama}, kamu berada di jurusan ${jurusan} dan umur kamu ${umur} Tahun`;
+        const str2 = coba`Hello ${nama1}, kamu berada di jurusan ${jurusan1} dan umur kamu ${umur1} Tahun`;
+
+
+
+        document.body.innerHTML =`${str} <br> ${str2}`;
+    </script>
+</body>
+</html>
