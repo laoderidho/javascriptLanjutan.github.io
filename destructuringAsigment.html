@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //destructuring Array
+        const myArray = ['Ridho', 'reza', 'La Ode', 'fahreza']
+
+        const [a,b,c,d]=myArray  //bisa array tersebut di hilangkan jika tidak mau tapi tanda , jangan di hapus
+
+        console.log(a);
+
+        //swap items
+        let satu = 1;
+        let dua = 2;
+        console.log(satu);
+
+        [satu,dua]= [dua,satu]; //ini di gunakan untuk menukar nilai variable 
+        console.log(satu);
+
+      //  return value pada function
+
+        function coba (){
+            return [1, 2];
+        }
+
+        const [e, f] = coba()
+
+        console.log(e);
+
+        //rest parameter 
+
+        const [one, ...values] = [1,2,3,4,5,5,6,6,7];  //rest paraemeter memuat semua value setelah one / indeks pertama di panggil 
+        
+        console.log(values);
+
+        //destructuring object
+
+        // const mhs = {
+        //     nama : 'Ridho Fahreza',
+        //     jurusan : 'Teknik Informatika',
+        //     umur : 18
+        // }
+
+        // const {nama, jurusan, umur} = mhs; //object tidak bisa di panggil tanpa mendeklarasikan property nya
+
+        // console.log(nama);
+
+
+        //asigment tanpa deklarasi object 
+
+        // ({nama, umur}={nama: 'Ridho', umur : 18});
+        // console.log(nama);
+
+        //memberikan default value 
+
+        // const mhs = {
+        //     nama : 'Ridho Fahreza',
+        //     jurusan : 'Teknik Informatika',
+        //     umur : 18,
+        //     mataKuliah :'teknik Informatika'
+        // }
+
+        // const {nama, jurusan, umur , mataKuliah = 'teknik industri'} = mhs; //mata kuliah memberikan default sementara / isi sementara object mata kuliah kosong
+        // console.log(mataKuliah);
+        
+        //rest parameter
+        // const mhs = {
+        //     nama : 'Ridho Fahreza',
+        //     jurusan : 'Teknik Informatika',
+        //     umur : 18,
+        //     mataKuliah :'teknik Informatika'
+        // }
+
+        // const {...values1} = mhs;
+        // console.log(values1);
+
+        //mengambil field pada object, setelah di kirim sebagai parameter sebagai function 
+        
+         const mhs = {
+            id: 123,
+            nama : 'Ridho Fahreza',
+            jurusan : 'Teknik Informatika',
+            umur : 18,
+            mataKuliah :'teknik Informatika'
+        }
+
+        function getIdMhs({id, nama} ){ // kurung kurawal bermaksud untuk mengambil isi object 
+            return `id anda ${id} nama anda ${nama}`;
+        }
+
+        console.log(getIdMhs(mhs)) //mhs di panggil agar function tersebut mengambil property dari object mhs
+        
+    </script>
+</body>
+</html>

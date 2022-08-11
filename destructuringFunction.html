@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+    // destructuring 
+
+    // function sum (a,b){
+    //     return [a + b, a * b];  // jika di panggil function dengan parameternya maka akan menjadi array
+    // }
+    
+    // const [jumlah, kali] = sum(2,3);
+
+    // console.log(jumlah);
+
+    //destructuring object
+
+    // function kalkulasi (a,b){
+    //     return {
+    //         tambah : a+b,
+    //         kurang : a-b,
+    //         kali : a*b,
+    //         bagi : a/b,
+    //     }
+    // }
+
+    // const {bagi, tambah, kurang} = kalkulasi (2,3);
+    // console.log(kurang)
+
+    // destructuring function arguments 
+
+    const mhs = {
+        nama: 'Ridho',
+        umur : 17,
+        jurusan : 'Teknik Informatika',
+        nilai : {
+            tugas : 90,
+            mid : 78,
+            final : 80
+        }
+    }
+
+    function ambil ({nama, umur, nilai:{tugas, mid, final}}){
+        return `Hello ${nama} umur kamu adalah ${umur} tahun dan nilai tugas saya ${tugas}`;
+    }
+
+    console.log(ambil(mhs));
+    </script>
+</body>
+</html>
