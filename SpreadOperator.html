@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+        }
+        .nama{
+            font-size: 50px;
+        }
+        .nama span{
+            display: inline-block;
+            transition: .3s;
+
+        }
+        .nama span:hover{
+            transform: scale(2);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>
+        <ul>
+            <li class="list">Ridho</li>
+            <li class="list">Reza</li>
+            <li class="list">Fahreza</li>
+        </ul>
+    </div> -->
+    <h1 class="nama">Ridho</h1>
+
+    <script>
+        //memecah iterables menjadi singgle elements
+
+        // const mhs = ['Ridho', 'reza', 'dilan', 'La Ode'];
+        // console.log(...mhs)
+
+        //menggabungkan dua array
+
+        // const mhs = ['Ridho', 'reza', 'dilan', 'La Ode'];
+        // const dosen = ['Andrew', 'Fergie', 'Elmor', 'Reyman'];
+        // const collab = ['Mahasiswa :',...mhs, 'Dosen :' , ...dosen]
+        // console.log(collab)
+
+
+        //copy array 
+    //   const mhs = ['Ridho', 'reza', 'dilan', 'La Ode'];
+    //   const mhs1 = [...mhs];
+    //   mhs1[0] = 'falid';
+
+    //   console.log(mhs)
+
+    // di dalam dom
+
+    // const el = document.querySelectorAll('li');
+        
+    //  const mhs = [...el].map(e=> e.textContent)
+
+    //  console.log(mhs)
+
+    const nama = document.querySelector('.nama');
+    
+    const huruf = [...nama.textContent].map(e=> `<span>${e}</span>`).join(' ');
+
+    console.log(huruf)
+    nama.innerHTML= huruf
+    </script>
+</body>
+</html>

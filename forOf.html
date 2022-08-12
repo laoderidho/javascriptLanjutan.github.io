@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <ul>
+    <li class="nama">Ridho</li>
+    <li class="nama">fahreza</li>
+    <li class="nama">dilan</li>
+   </ul>
+
+    <script>
+        //for of 
+        // const mhs = ['Ridho', 'Reza', 'Pemulihan', 'Kemudian'];
+
+        // for (const m of mhs){
+        //     console.log(m);
+        // }
+
+        //looping string dengan for of 
+        // const string = 'Ridho'; 
+
+        // for ( const s of string){ //untuk me looping string karakter per karakter 
+        //     console.log(s);
+        // }
+        
+        
+        //  const mhs = ['Ridho', 'Reza', 'Pemulihan', 'Kemudian'];
+
+        //  mhs.forEach((e, i) => console.log(`${e} adalah mhs ke ${i+1}`))
+
+        //node list
+
+        // const liNama = document.querySelectorAll('.nama');
+        
+
+        // for ( m of liNama){
+        //     console.log(m.innerHTML);
+        // }
+
+        //arguments 
+
+        function number (){
+            let jumlah = 0;
+
+            for (m of arguments){
+                jumlah += m;
+            }
+            return jumlah
+        }
+
+        console.log(number(1,2,3,45,5))
+
+    </script>
+</body>
+</html>
