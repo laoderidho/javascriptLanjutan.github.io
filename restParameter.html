@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //rest Parameter 
+        function myFunction(a, b, ...args){ //rest  parameter fungsinya untuk mengambil semua parameter sisa jika sebuah parameter yang di panggil sangat banyak 
+            return args;
+        }
+        console.log(myFunction(1,23,1,23,31));
+
+        function jumlahkan (...angka){
+            // let total = 0;
+            // for (m of angka){
+            //   total +=m;
+            // }
+            // return total;
+            return angka.reduce((a,c)=> a+c);
+        }
+        console.log(jumlahkan(1,2,3,4,5,6,7))
+
+
+        //array destructuring 
+        const kelompok1 = ['Ridho', 'Fahreza', 'Reza', 'Indigo', 'pesulap Merah'];
+
+        const [ketua, wakil, ...anggota] = kelompok1 
+
+        console.log(anggota)
+
+        //object destructuring 
+        const team = {
+            stack: 'Reza',
+            leader : 'Ridho',
+            fronend1: 'Fahreza',
+            fronend2 : 'Fahreza 2',
+            backend : 'Ridho',
+            devops : 'Sianida'
+        }
+
+        const { stack, ...tim} = team;
+        
+        console.log(tim)
+
+        //filtering
+
+        function filtering (type, ...value){
+            return value.filter(e=> typeof e===type) //type of adalah pemanggilan suatu tipe data jika ingin di filter
+        }
+        console.log(filtering('string', 1,2,4, 'Ridho', 'Reza', 'Fahreza'));
+    </script>
+</body>
+</html>

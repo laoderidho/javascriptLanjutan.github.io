@@ -1,0 +1,51 @@
+[
+    {
+        "id" : 1,
+        "Nama" : " Ridho Fahreza",
+        "Jurusan" : " Teknik Informatika",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 2,
+        "Nama" : " Salwa Poni",
+        "Jurusan" : "pendidikan agama islam",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 3,
+        "Nama" : "Nurjana Umasugi",
+        "Jurusan" : "Bahasa Indonesia ",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 4,
+        "Nama" : " Firman Makatita",
+        "Jurusan" : "Pendidikan ilmu alam",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 5,
+        "Nama" : "Syamsuri Irtaza Fahreza",
+        "Jurusan" : "teknik Kereta",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 6,
+        "Nama" : "Rizal ende",
+        "Jurusan" : "psikologi",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    },
+    {
+        "id" : 7,
+        "Nama" : "erwin",
+        "Jurusan" : "pendidikan agama islam",
+        "umur " : 20,
+        "kesehatan": "sehat"
+    }
+]

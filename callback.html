@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        //callback 
+        //syncronous callback 
+
+        // function halo (nama){
+        //     return alert(`Hallo ${nama}`);
+        // }
+
+        // function panggil (call){
+        //     const nama = prompt('Masukkan nama anda');
+        //     call(nama);
+        // }
+        // panggil(halo);
+
+        /*
+        1. function halo menjadi pemanggilan parameter / menjadi parameter bagi function panggil 
+        */
+
+        //versi singkat 
+
+        // function call(callback){
+        //     const nama = prompt('Masukkan nama anda');
+        //     callback(nama);
+        // }
+
+        // call(nama=>{ alert(`Halo ${nama}`)})
+
+        
+            // const mhs = 
+            // [
+            //     {
+            //         "id" : 1,
+            //         "Nama" : " Ridho Fahreza",
+            //         "Jurusan" : " Teknik Informatika",
+            //         "umur " : 20,
+            //         "kesehatan": "sehat"
+            //     },
+            //     {
+            //         "id" : 2,
+            //         "Nama" : " Salwa Poni",
+            //         "Jurusan" : "pendidikan agama islam",
+            //         "umur " : 20,
+            //         "kesehatan": "sehat"
+            //     },
+            //     {
+            //         "id" : 3,
+            //         "Nama" : "Nurjana Umasugi",
+            //         "Jurusan" : "Bahasa Indonesia ",
+            //         "umur " : 20,
+            //         "kesehatan": "sehat"
+            //     }
+            // ]
+            
+            // mhs.forEach(e=> console.log(e.Nama))
+
+        //asyncronous callback dengan vannila javascrip
+
+        function getDatamhs(url, succes, err){
+            let xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState ===4){
+                    if(xhr.status === 200){
+                        succes(xhr.response);
+                    }else if(xhr.status ===404){
+                        error();
+                    }
+                }
+            }
+            xhr.open('get', url);
+            xhr.send();
+        }
+        getDatamhs('mhs.json', hasil=>{
+            const mhs = JSON.parse(hasil);
+            mhs.forEach(e=> console.log(e.Nama))
+        }, ()=>{
+            
+        })
+
+        // asyncronous callback dengan  jquery
+
+        $.ajax({
+            url: 'mhs.json',
+            success: (mhs)=>{
+                mhs.forEach(e=> console.log(e.Nama))
+            },
+            error: (e)=>{
+                console.log(e.responseText)
+            }
+        });
+    </script>
+</body>
+</html>
