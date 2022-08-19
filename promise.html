@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //promise adalah object yang mempresentasikan keberhasilan/ kegagalan sebuah event yang asynchronous di masa yang akan datang 
+        //state(fulfilled(Terpenuhi)/reject(tertolak)/ pending(menunggu))
+        //callback(resolve/reject/finnaly)
+        //aksi(then(terpenuhi)/ catch(jika tertolak))
+        //contoh 1
+
+        //     let tepat = true;
+        //     const janji1 = new Promise((resolve, reject)=>{
+        //         if(tepat){
+        //             resolve('Janji telah di tepati')
+        //         }else{
+        //             reject('Ingkar janji')  
+        //         }
+        //     })
+
+        //   janji1.then(response=> console.log(`Ok : ${response}`)).catch(response=> console.log(`Ok :  ${response}`))
+
+        //contoh 2
+
+                // let tepat = true;
+                // const janji1 = new Promise((resolve, reject)=>{
+                //     if(tepat){
+                //         setTimeout(()=>{
+                //             resolve('Janji di tepati')
+                //         }, 3000)
+                //     }else{
+                //         setTimeout(()=>{
+                //             resolve('Janji Akan di tepati beberapa saat')
+                //         }, 3000)
+                //     }
+                // })
+
+                // console.log(janji1.then(()=> console.log(janji1)))
+
+                //contoh 3
+
+                // let tepat = true;
+                // const janji1 = new Promise((resolve, reject)=>{
+                //     if(tepat){
+                //         setTimeout(()=>{
+                //             resolve('Janji di tepati')
+                //         }, 3000)
+                //     }else{
+                //         setTimeout(()=>{
+                //             resolve('Janji Akan di tepati beberapa saat')
+                //         }, 3000)
+                //     }
+                // })
+
+                // janji1.finally(()=> console.log('Program Selesai')).then(Response=> console.log(`Selesai ${Response}`)).catch(response=> console.log(`Maaf ${response}`))
+
+                const mhs = new Promise(resolve=>{
+                    setTimeout(()=>{
+                        resolve([{
+                            nama: 'Ridho',
+                            jurusan: 'IT',
+                            Matkul: 'administrasi Basis Data'
+                        }])
+                    }, 2000)
+                });
+
+                const mhs1 = new Promise(resolve=>{
+                    setTimeout(()=>{
+                        resolve([{
+                            nama: 'Salwa Poni',
+                            jurusan: 'Pendidikan Agama Islam',
+                            kondisi : 'Sehat'
+                        }])
+                    }, 2000)
+                });
+
+                Promise.all([mhs, mhs1]) // jika ingin di satukan
+                    .then(response=> console.log(response));
+
+                // Promise.all([mhs, mhs1])
+                // .then(response=>{
+                //    const [mhs, mhs1] = response //jika ingin di bedakan
+                //     console.log(mhs)
+                //     console.log(mhs1)
+                // })
+                
+    </script>
+</body>
+</html>
