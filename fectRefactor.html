@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col">
+        <h1>Avengers Movies</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control input-keyword" placeholder="Search Movie" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-primary search-button" type="button">Cari</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row anime">
+      
+    </div>
+
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="Movies" tabindex="-1" aria-labelledby="MoviesLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="MoviesLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+     const button = document.querySelector('.search-button');
+    
+     button.addEventListener('click', async function(){
+        const input = document.querySelector('.input-keyword');
+        const movies = await getMovies(input.value);
+        updateUI(movies)
+     })
+
+     function getMovies(keyword){
+        return fetch('http://www.omdbapi.com/?apikey=2344bf3c&s=' + keyword)
+        .then(response=> response.json())
+        .then(response=> response.Search)
+     }
+     function updateUI(movies){
+        let cards = ' ';
+        movies.forEach(m=> cards+=showCards(m));
+        const anime = document.querySelector('.anime');
+        anime.innerHTML = cards;
+     }
+
+     //ketika detail di klik 
+     //event binding
+
+     document.addEventListener('click', async function(e){
+        if(e.target.classList.contains('modal-detail-button')){
+            const imdb = e.target.dataset.imdb;
+            const detail = await getMovieDetail(imdb);
+            updateUIDetail(detail);
+        }
+     });
+
+     function getMovieDetail(imdb){
+        return fetch('http://www.omdbapi.com/?apikey=2344bf3c&i='+ imdb)
+        .then(response=>response.json())
+        .then(m=>m)
+     }
+     
+     function updateUIDetail(m){
+        const showDetail = detail(m);
+        const modalBody = document.querySelector('.modal-body');
+        modalBody.innerHTML = showDetail;
+     }
+    function showCards(e){
+        return `<div class="col-md-4 my-3">
+                      <div class="card">
+                        <img src="${e.Poster}" class="" alt="">
+                        <div class="card-body">
+                          <h5 class="card-title">${e.Title} </h5>
+                          <h6 class="card-subtitle mb-2 text-muted">${e.Year}</h6>
+                          <a href="#" class="btn btn-primary modal-detail-button" data-bs-toggle="modal" data-bs-target="#Movies" data-imdb="${e.imdbID}">Show Detail</a>
+                        </div>
+                      </div>
+                    </div>`;
+    }
+    function detail(m){
+        return `<div class="container-fluid">
+                                    <div class="row">
+                                      <div class="col-md-3">
+                                        <img src="${m.Poster}" alt=""  class="img-fluid">
+                                      </div>
+                                      <div class="col-md">
+                                        <ul class="list-group">
+                                          <li class="list-group-item"> <h4>${m.Title}</h4> </li>
+                                          <li class="list-group-item"> <strong>Director : </strong> ${m.Director} </li>
+                                          <li class="list-group-item"> <strong>Actor :</strong> ${m.Actors} </li>
+                                          <li class="list-group-item"> <strong>Writer :</strong>${m.Writer}</li>
+                                          <li class="list-group-item"> <strong>Plot : </strong> ${m.Plot}</li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                </div>`;
+    }
+  </script>
+</body>
+</html>
