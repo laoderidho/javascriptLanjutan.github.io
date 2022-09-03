@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        /*asyncrnous function == async
+        sebuah function yang bekerja secara asynronous (melalui Event Loop) yang 
+        menghasilkan (implisit) promise sebagai return value nya, tapi cara penulisan 
+        kodenya menggunqakan penulisan yang syncronous*/
+
+        //fungsi yang berjalan secara asynchronous 
+        //menghasilkan implist promise
+        //cara penulisannya sama seperti syncronous function (function biasa)
+
+        // const coba = new Promise(resolve => {
+        //     setTimeout(()=>{
+        //          resolve('Waktu selesai')
+        //     }, 2000)
+        // });
+    //    coba.then(()=>console.log(coba))
+
+//     function cobaP(){
+//         return new Promise(resolve => {
+//             setTimeout(()=>{
+//                 resolve('Selesai')
+//             }, 2000)
+//         });
+//     }
+
+//    async function cobaA(){
+//         const coba = await cobaP();
+//         console.log(coba);
+//     }
+//     cobaA()
+
+    function cobaPromise(){
+        return new Promise((resolve, reject) => {
+            const waktu = 2000;
+            if(waktu<5000){
+                setTimeout(()=>{
+                    resolve('Diterima')
+                }, waktu)
+            }else{
+                setTimeout(()=>{
+                    reject('Ditolak')
+                },waktu)
+            }
+        })
+    }
+    // const coba = cobaPromise();
+    // coba.then(()=>console.log(coba)).catch(()=> console.log(coba))
+
+    async function tesCoba(){
+        try{
+            const coba = await cobaPromise();
+            console.log(coba);
+        }catch(err){
+            console.log(err);
+        }
+    }
+    tesCoba();
+    </script>
+</body>
+</html>
