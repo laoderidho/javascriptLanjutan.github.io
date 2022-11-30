@@ -64,6 +64,7 @@
         .then(response=> response.json())
         .then(response=> response.Search)
      }
+     
      function updateUI(movies){
         let cards = ' ';
         movies.forEach(m=> cards+=showCards(m));
