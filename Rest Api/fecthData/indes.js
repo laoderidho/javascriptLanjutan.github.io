@@ -14,5 +14,5 @@ const getData = fetch('../source-code-rest-api/pizza.json')
                                 <button class="keranjang"><i class="fa-solid fa-cart-shopping"></i> keranjang</button>
                             </div>`)
                         const card = document.getElementById('menu').innerHTML = data
-                })
-                
+})
+

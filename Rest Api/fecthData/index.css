@@ -2,31 +2,42 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+ 
 }
 
 nav{
-    background-color: #f44336;
+    background-color: white;
     box-shadow: 0px 0px 3px;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 20px;
+    background-color: red;
 }
+
 h1{
     padding-top: 16px;
     padding-bottom: 17px;
 }
-.nav-top{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+div a{
+    text-decoration: none;
+    font-weight: bold;
     color: white;
-    padding: 13px;
+    padding: 8px;
+    transition: .3s;
 }
+
 
 .card{
     width: 300px;
     height: 450px;
     overflow: auto;
     margin: 20px;
-    box-shadow: 0px 0px 5px;
-    transition: .1s;
+    box-shadow: 0px 0px 3px;
+    transition: .2s;
     padding: 13px; 
     position: relative; 
 }
@@ -52,14 +63,15 @@ h1{
 .card button{
     height: 30px;
     color: white;
-    background-color: #00b0ff;
+    background-color: #f44336;
     border-style: none;
     padding: 5px;
     border-radius: 3px;
     transition: .3s;
 }
 .card button:hover{
-    background-color: #82b1ff;
+    margin-bottom: 5px;
+    background-color: #ffcdd2;
     cursor: pointer
 }
 
