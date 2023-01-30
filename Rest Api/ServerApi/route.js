@@ -11,4 +11,6 @@ module.exports = app=>{
         .get(myJson.getIdMhs)
     app.route('/tambahMhs')
         .post(myJson.postMhs);
+    app.route('/hapus')
+        .delete(myJson.deleteMhs);
 }

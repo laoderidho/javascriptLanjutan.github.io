@@ -45,3 +45,16 @@ exports.postMhs = (req, res)=>{
                 response.ok("berhasil menambahkan data", res)
             }
         })}
+
+//menghapus data 
+exports.deleteMhs = (req, res)=>{
+    let id = req.body.id;
+    connection.query('DELETE FROM mahasiswa WHERE id=?',[id], 
+    (err, rows, fields)=>{
+            if(err){
+                console.log(err)
+            }else{
+                response.ok("berhasil Menghapus  data", res)
+            }
+        })
+}
