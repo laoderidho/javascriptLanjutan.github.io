@@ -3,7 +3,7 @@
 exports.ok = (values, res)=>{
     let data ={
         'status': 200,
-        'values': values,
+        'Data': values,
     };
 
      res.json(data);
