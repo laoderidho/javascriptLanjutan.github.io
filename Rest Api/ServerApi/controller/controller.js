@@ -46,6 +46,26 @@ exports.postMhs = (req, res)=>{
             }
         })}
 
+
+//mengupdate data 
+exports.UpdateMhs = (req, res)=>{
+    let id = req.body.id;
+    let Nama = req.body.Nama;
+    let Nim = req.body.Nim;
+    let Jurusan = req.body.Jurusan;
+
+    connection.query('UPDATE mahasiswa SET Nama =?, Nim =?, Jurusan=? WHERE id =?', [ Nama, Nim, Jurusan, id], 
+        (err, rows, fields)=>{
+            if(err) {
+                console.log(err)
+            }else{
+                response.ok('berhasil ubah data', res)
+            }
+        }
+    )
+}
+
+
 //menghapus data 
 exports.deleteMhs = (req, res)=>{
     let id = req.body.id;

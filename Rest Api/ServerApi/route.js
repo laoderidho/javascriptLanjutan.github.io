@@ -13,4 +13,6 @@ module.exports = app=>{
         .post(myJson.postMhs);
     app.route('/hapus')
         .delete(myJson.deleteMhs);
+    app.route('/update')
+        .put(myJson.UpdateMhs);
 }
