@@ -1,12 +1,10 @@
 import React from 'react'
-
+import Mahasiswa from './components/Mahasiswa'
 
 const App = () => {
   return (
     <div>
-      <h1>Hello World</h1>
-      <div className='alert alert-primary'>Hello</div>
-      <button className='btn btn-primary'> Klik saya</button>
+      <Mahasiswa/>
     </div>
   )
 }

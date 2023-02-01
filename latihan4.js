@@ -1,1 +1,1 @@
-console.log("2"-"1")
+const app = fetch('http://localhost:3100/tampil').then(res=>res.json()).then(res=>console.log(res.data))
