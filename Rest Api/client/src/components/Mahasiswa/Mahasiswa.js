@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
+
 const Mahasiswa = () => {
     const [students, setStudents] = useState([])
 
@@ -16,6 +17,8 @@ const Mahasiswa = () => {
 
   return (
     <div className='container'>
+      <h1>Table Mahasiswa</h1>
+      <a href="/add" className='btn btn-primary'><i className='fa-solid fa-plus'></i> Tambah Mahasiswa</a>
       <table className='table table-striped'>
             <thead>
                 <tr>
@@ -32,6 +35,8 @@ const Mahasiswa = () => {
                     <td>{student.Nama}</td>
                     <td>{student.Nim}</td>
                     <td>{student.Jurusan}</td>
+                    <td><button className='btn btn-success'> <i className='fa-solid fa-pen-to-square'></i>Edit</button></td>
+                    <td><button className='btn btn-danger'> <i className='fa-solid fa-trash'></i> Hapus</button></td>
                 </tr>
               ))}
             </tbody>

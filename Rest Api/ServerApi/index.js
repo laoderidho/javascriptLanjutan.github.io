@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3100;
 let route = require('./route')
-let myCors = require('./middleware/myCors')
+
 
 //parse aplication 
 app.use(bodyParser.urlencoded({extended: true}));
