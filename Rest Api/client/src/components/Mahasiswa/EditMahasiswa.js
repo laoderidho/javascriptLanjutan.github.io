@@ -1,17 +1,22 @@
 import axios from 'axios'
-import React,{useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React,{useState, useEffect} from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const AddMahasiswa = () => {
+const EditMahasiswa = () => {
     const [Nama, setNama] = useState('')
     const [Nim, setNim] = useState('')
     const [Jurusan, setJurusan] = useState('')
     const navigate = useNavigate();
+    const { id } = useParams();
 
-    const saveMahasiswa = async e=>{
+    useEffect(()=>{
+      getMahasiswaById();
+    },[])
+
+    const UpdateMahasiswa = async e=>{
         e.preventDefault();
         try{
-            await axios.post('http://localhost:3100/tambahMhs', {
+            await axios.put(`http://localhost:3100/update/${id}`, {
                 Nama, Nim, Jurusan
             })
             navigate('/')
@@ -20,21 +25,31 @@ const AddMahasiswa = () => {
         }
     }
 
+    const getMahasiswaById = async (e)=>{
+      const response = await axios.get(`http://localhost:3100/tampil/${id}`)
+       setNama(response.data.data[0].Nama)
+       setNim(response.data.data[0].Nim)
+       setJurusan(response.data.data[0].Jurusan)
+    }
+
+   
+
   return (
     <div className='container'>
-        <form onSubmit={saveMahasiswa}>
+
+        <form onSubmit={UpdateMahasiswa}>
+       
             <div className='mb-3'>
                 <label for="" className='form-label'>Nama Mahasiswa</label>
-                <input type="text" className='form-control'  onChange={e=>setNama(e.target.value)} placeholder="masukkan nama anda"/>
+              <input type="text" className='form-control' value={Nama} onChange={e=>setNama(e.target.value)} placeholder="masukkan nama anda"/>
             </div>
             <div className='mb-3'>
                 <label for="" className='form-label'>Nim Mahasiswa</label>
-                <input type="text" className='form-control' onChange={e=>setNim(e.target.value)} placeholder="masukkan Nim Anda anda"/>
-                
+                <input type="text" className='form-control' value={Nim} onChange={e=>setNim(e.target.value)} placeholder="masukkan Nim Anda anda"/>        
             </div>
             <div className='mb-3'>
                 <label for="" className='form-label'></label>
-                <select className='form-select' onChange={e=>setJurusan(e.target.value)}>
+                <select className='form-select' value={Jurusan} onChange={e=>setJurusan(e.target.value)}>
                     <option value="Teknik Informatika">Teknik Informatika</option>
                     <option value="Sistem Informasi">Sistem Informasi</option>
                     <option value="Teknik Komputer">Teknik Komputer</option>
@@ -47,4 +62,4 @@ const AddMahasiswa = () => {
   )
 }
 
-export default AddMahasiswa
+export default EditMahasiswa

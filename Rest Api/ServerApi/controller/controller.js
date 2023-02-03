@@ -49,7 +49,7 @@ exports.postMhs = (req, res)=>{
 
 //mengupdate data 
 exports.UpdateMhs = (req, res)=>{
-    let id = req.body.id;
+    let id = req.params.id;
     let Nama = req.body.Nama;
     let Nim = req.body.Nim;
     let Jurusan = req.body.Jurusan;
